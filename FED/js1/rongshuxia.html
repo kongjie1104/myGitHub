@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>榕树下</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#wrap
+		{
+			width:280px;
+			padding: 5px;
+			border-right: 1px solid #5abd2a;
+			font-size: 12px;
+			font-family: "宋体";
+			color: #3c3e3c;
+		}
+		h4
+		{
+			display: inline;
+			color: #5abd2a;
+			font-size: 14px;
+		}
+		a
+		{
+			text-decoration: none;
+			float: right;
+			border: 1px solid #b7bfb3;
+			color: black;
+		}
+		ul
+		{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li
+		{
+
+			background: url(./img/tag.JPG) no-repeat left top;
+			background-size: 15px;
+			border-bottom: 1px solid #eaf1e6;
+			padding-bottom: 10px;
+			margin-top: 10px;
+		}
+		img
+		{
+			float: left;
+			width: 70px;
+		}
+		.main
+		{
+			margin-left: 30px;
+			height: 110px;
+			display: none;
+		}
+		.right
+		{
+			margin-left: 80px;
+		}
+		.name
+		{
+			margin-left: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h4>图书畅销榜</h4>
+			<a href="#">MORE>></a>
+		</div>
+		<div id="article">
+			<ul>
+				<li onclick="myFunction(event)">
+					<div class="name">
+						<span>蛙</span>
+					</div>
+					<div class="main">
+						<img src="./img/wa.jpg">
+						<div class="right">
+							<p>蛙</p>
+							<p>作者：莫言</p>
+						</div>
+					</div>
+				</li>
+				<li onclick="myFunction(event)">
+					<div class="name">
+						<span>白鹿原</span>
+					</div>
+					<div class="main">
+						<img src="./img/wa.jpg">
+						<div class="right">
+							<p>白鹿原</p>
+							<p>作者：莫言</p>
+						</div>
+					</div>
+				</li>
+				<li onclick="myFunction(event)">
+					<div class="name">
+						<span>大秦帝国最终修订版</span>
+					</div>
+					<div class="main">
+						<img src="./img/wa.jpg">
+						<div class="right">
+							<p>大秦帝国最终修订版</p>
+							<p>作者：莫言</p>
+						</div>
+					</div>
+				</li>
+				<li onclick="myFunction(event)">	
+					<div class="name">
+						<span>偶发空缺</span>
+					</div>
+					<div class="main">
+						<img src="./img/wa.jpg">
+						<div class="right">
+							<p>偶发空缺</p>
+							<p>作者：莫言</p>
+						</div>
+					</div>
+				</li>
+				<li onclick="myFunction(event)">
+					<div class="name">
+						<span>明朝那些事儿1</span>
+					</div>
+					<div class="main">
+						<img src="./img/wa.jpg">
+						<div class="right">
+							<p>明朝那些事儿1</p>
+							<p>作者：莫言</p>
+						</div>
+					</div>
+				</li>
+				<li onclick="myFunction(event)">
+					<div class="name">
+						<span>当李晓峰成为SKY</span>
+					</div>
+					<div class="main">
+						<img src="./img/wa.jpg">
+						<div class="right">
+							<p>当李晓峰成为SKY</p>
+							<p>作者：莫言</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		var all=document.getElementsByClassName("main");
+		for (i=0; i<all.length; i++) { all[i].style.display="none" };
+		function myFunction(event)
+		{
+			var obj=event.target;
+			if (obj.tagName == 'SPAN') {
+				var item = obj.parentElement.parentElement.children[1]
+				if(item.style.display=="none") {
+					for (i=0; i<all.length; i++) { all[i].style.display="none" };
+					item.style.display="block";
+				} else { item.style.display="none"; }
+			}
+			if (obj.tagName == 'LI') {
+				var item = obj.children[1]
+				if(item.style.display=="none") {
+					for (i=0; i<all.length; i++) { all[i].style.display="none" };
+					item.style.display="block";
+				} else { item.style.display="none"; }
+			}
+		}
+	</script>
+</body>
+</html>
